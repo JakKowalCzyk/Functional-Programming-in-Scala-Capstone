@@ -1,5 +1,9 @@
 package observatory
 
+case class StationID(STN:Option[Int], WBAN:Option[Int])
+case class Station(stationID: StationID, location: Option[Location])
+case class MeasurePoint(stationID: StationID, month: Int, day: Int, temperature: Temperature)
+
 /**
   * Introduced in Week 1. Represents a location on the globe.
   * @param lat Degrees of latitude, -90 ≤ lat ≤ 90
