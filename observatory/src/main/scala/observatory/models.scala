@@ -1,5 +1,7 @@
 package observatory
 
+import com.sksamuel.scrimage.Pixel
+
 case class StationID(STN:Option[Int], WBAN:Option[Int])
 case class Station(stationID: StationID, location: Option[Location])
 case class MeasurePoint(stationID: StationID, month: Int, day: Int, temperature: Temperature)
@@ -42,5 +44,7 @@ case class CellPoint(x: Double, y: Double)
   * @param green Level of green, 0 ≤ green ≤ 255
   * @param blue Level of blue, 0 ≤ blue ≤ 255
   */
-case class Color(red: Int, green: Int, blue: Int)
+case class Color(red: Int, green: Int, blue: Int){
+  def pixel : Pixel = Pixel(red, green, blue,0)
+}
 
